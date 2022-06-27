@@ -1,11 +1,11 @@
 import "./App.css";
-import Barchart from "./components/barchart";
+import AppRouter from "./AppRouter";
 
 function App() {
   return (
     <div className="App">
+      <AppRouter />
       <header className="App-header"></header>
-      <Barchart />
     </div>
   );
 }
