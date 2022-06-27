@@ -11,7 +11,7 @@ function AppRouter() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/barchart" element={<BarchartPage />} />
         <Route path="/treemap" element={<TreemapPage />} />
       </Routes>

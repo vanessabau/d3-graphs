@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./navbar.css";
 
 const Navbar = () => {
   return (
-    <div>
-      Navbar
-      <ul>
+    <div
+      className="table
+    "
+    >
+      <ul id="horizontal-list">
         <li>
           <Link to="/">Home</Link>
         </li>
