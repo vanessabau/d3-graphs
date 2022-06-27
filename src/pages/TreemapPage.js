@@ -11,6 +11,7 @@ const TreemapPage = () => {
         <a href="https://observablehq.com/@d3/zoomable-treemap">this</a>{" "}
         D3-HTML/JavaScript Zoomable treemap by Mike Bostock
       </h4>
+      <p>Click into the tiles to see a deeper level of data</p>
       <Treemap dataJSON={treemapData} />
     </div>
   );
