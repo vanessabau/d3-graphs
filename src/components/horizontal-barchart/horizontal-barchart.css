@@ -1,0 +1,8 @@
+.horizontal-barchart {
+  height: 25px;
+  margin: 10px 10px 10px 0px;
+  background-color: pink;
+  color: black;
+  text-align: center;
+  line-height: 25px;
+}
