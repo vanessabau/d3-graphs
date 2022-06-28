@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import { formatText, selectColor } from "./util.js";
 //import { treemapDataConfig } from './treemap-data-config';
+import "./treemap-styles.css";
 
 const ZoomTreemap = ({ dataJSON }) => {
   const svgRef = useRef();
@@ -65,7 +66,7 @@ const ZoomTreemap = ({ dataJSON }) => {
           .data((d) =>
             formatText(d)
               .split(/(?=[A-Z][^A-Z])/g)
-              .concat(`Instances: ${d.value}`)
+              .concat(`Pop. (1000): ${d.value}`)
           )
           .join("tspan")
           .attr("x", 3)
@@ -145,7 +146,7 @@ const ZoomTreemap = ({ dataJSON }) => {
       setTreemapProperties(hierarchy);
 
       let svg = svgCanvas
-        .attr("viewBox", [0.5, -30.5, width, height + 30])
+        .attr("viewBox", [0.5, -30.5, width, height])
         .style("font", "10px sans-serif");
 
       let group = svg.append("g").call(render, hierarchy);

@@ -14,17 +14,18 @@ export const formatText = (d) => {
 // Assigns a color  to the root and each repo, randomly assigns colors to component tiles
 export const selectColor = (repo) => {
   const colors = {
-    flare: "white",
-    vis: "#d53e4f",
-    util: "#f46d43",
-    query: "#fdae61",
-    analytics: "#fee08b",
-    animate: "#e6f598",
-    scale: "#abdda4",
-    physics: "#66c2a5",
-    data: "#3288bd",
-    display: "#5e4fa2",
-    flex: "#9e0142",
+    Continents: "white",
+    Africa: "#d53e4f",
+    Antarctica: "#f46d43",
+    Oceana: "#fdae61",
+    "South America": "#fee08b",
+    Asia: "#e6f598",
+    "North America": "#abdda4",
+    Europe: "#66c2a5",
+    // physics: "#3288bd",
+    // data: "#3288bd",
+    // display: "#5e4fa2",
+    // flex: "#9e0142",
   };
 
   if (colors[repo]) {
