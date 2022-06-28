@@ -159,7 +159,7 @@ const ZoomTreemap = ({ dataJSON }) => {
 
   return (
     <div className="zoom-treemap-container">
-      <svg ref={svgRef}></svg>
+      <svg ref={svgRef} width="78%" height="78%"></svg>
     </div>
   );
 };

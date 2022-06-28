@@ -121,21 +121,56 @@
       "name": "Asia",
       "children": [
         {
-          "name": "converters",
+          "name": "North Asia",
+          "children": [{ "name": "Russia, Siberia", "value": 36000 }]
+        },
+        {
+          "name": "Western and Middle Asia",
           "children": [
-            { "name": "Converters", "value": 721 },
-            { "name": "DelimitedTextConverter", "value": 4294 },
-            { "name": "GraphMLConverter", "value": 9800 },
-            { "name": "IDataConverter", "value": 1314 },
-            { "name": "JSONConverter", "value": 2220 }
+            { "name": "Armenia", "value": 2937 },
+            { "name": "Azerbaijan", "value": 10015 },
+            { "name": "Bahrain", "value": 1638 },
+            { "name": "Cyprus", "value": 1198 },
+            { "name": "Georgia", "value": 3904 },
+            { "name": "Iran", "value": 82821 },
+            { "name": "Iraq", "value": 40412 },
+            { "name": "Israel", "value": 8584 },
+            { "name": "Jordan", "value": 10070 },
+            { "name": "Kuwait", "value": 4249 },
+            { "name": "Lebanon", "value": 6066 },
+            { "name": "Oman", "value": 5002 },
+            { "name": "Qatar", "value": 2744 },
+            { "name": "State of Palestine", "value": 5187 },
+            { "name": "Syria", "value": 18499 },
+            { "name": "Turkey", "value": 82962 },
+            { "name": "United Arab Emirates", "value": 9682 },
+            { "name": "Yemen", "value": 29580 }
           ]
         },
-        { "name": "DataField", "value": 1759 },
-        { "name": "DataSchema", "value": 2165 },
-        { "name": "DataSet", "value": 586 },
-        { "name": "DataSource", "value": 3331 },
-        { "name": "DataTable", "value": 772 },
-        { "name": "DataUtil", "value": 3322 }
+        {
+          "name": "Central Asia",
+          "children": [
+            { "name": "Afghanistan", "value": 37209 },
+            { "name": "Kazakhstan", "value": 18593 },
+            { "name": "Kyrgyzstan", "value": 6219 },
+            { "name": "Tajikistan", "value": 9292 },
+            { "name": "Turkmenistan", "value": 5943 },
+            { "name": "Uzbekistan", "value": 32807 }
+          ]
+        },
+        {
+          "name": "East Asia",
+          "children": [
+            { "name": "China", "value": 1400000 },
+            { "name": "China Hong Kong SAR", "value": 7491 },
+            { "name": "China, Macao SAR", "value": 642 },
+            { "name": "Japan", "value": 126855 },
+            { "name": "Korea (North)", "value": 25727 },
+            { "name": "Korea (South)", "value": 51339 },
+            { "name": "Mongolia", "value": 3166 },
+            { "name": "Taiwan", "value": 23758 }
+          ]
+        }
       ]
     },
     {
