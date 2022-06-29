@@ -84,7 +84,7 @@ const VerticalBarchart = () => {
     const horizontalAxisScale = d3
       .scaleLinear()
       .domain([0, 100])
-      .range([0, 500]);
+      .range([0, width]);
 
     const verticalAxisScale = d3
       .scaleLinear()
@@ -100,8 +100,18 @@ const VerticalBarchart = () => {
 
     // Call d3 axis methods and pass a scale int he scale method
     // Note the two ways you can call the scale
-    const xAxis = d3.axisBottom().scale(horizontalAxisScale);
-    const yAxis = d3.axisLeft(verticalAxisScale);
+    const xAxis = d3
+      .axisBottom()
+      .scale(horizontalAxisScale)
+      //.ticks(5) //Suggest number of ticks to display
+      .tickValues([0, 10, 50, 100]) // Suggest tick values
+      .tickSizeInner(8) // adjust tick length
+      .tickFormat(function (d) {
+        return d + "%"; // Adjust tick display
+      })
+      .tickPadding(1); // adjust space between tick and text
+
+    const yAxis = d3.axisLeft(verticalAxisScale).tickSizeOuter(0);
 
     const drawSecondVerticalBarchart = (_DOM) => {
       const svg = d3
@@ -110,11 +120,12 @@ const VerticalBarchart = () => {
         .attr("id", "second-barchart")
         .attr("width", width)
         .attr("height", height)
+        .style("padding", "25px")
         .style("background", "pink");
 
       // Append the g element which provides the ticks and labels and call our axis
       svg.append("g").attr("transform", "translate(50, 480)").call(xAxis);
-      svg.append("g").attr("transform", "translate(50, 0)").call(yAxis);
+      svg.append("g").attr("transform", "translate(50, 3)").call(yAxis);
 
       const rectangles = svg.selectAll("rect").data(secondNumbers);
 

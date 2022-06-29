@@ -1,3 +1,14 @@
 .vertical-barchart {
   margin-bottom: 2rem;
 }
+
+#second-barchart g path,
+g line {
+  stroke: deeppink;
+  stroke-width: 0.25rem;
+}
+
+#second-barchart g text {
+  stroke: indigo;
+  font-size: 12px;
+}
