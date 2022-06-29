@@ -20,7 +20,7 @@ const Barchart = () => {
         { bin: "0.9-1.0", frequency: 0 },
       ],
     };
-    console.log(jsonData);
+
     const svgCanvas = d3.select(svgRef.current);
 
     const margin = { top: 10, right: 30, bottom: 30, left: 30 },
