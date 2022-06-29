@@ -16,6 +16,7 @@ const HorizontalBarchart = () => {
       .append("div")
       .classed("horizontal-barchart", true)
       .style("width", function (d) {
+        // We set the width of the barchart in px related to the data. This will not always make sense
         return d * 10 + "px";
       })
       .text((d) => {

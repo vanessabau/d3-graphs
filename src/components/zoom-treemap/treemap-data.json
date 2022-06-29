@@ -170,16 +170,109 @@
             { "name": "Mongolia", "value": 3166 },
             { "name": "Taiwan", "value": 23758 }
           ]
+        },
+        {
+          "name": "South Asia",
+          "children": [
+            { "name": "Bangladesh", "value": 168066 },
+            { "name": "Bhutan", "value": 826 },
+            { "name": "India", "value": 1368738 },
+            { "name": "Maldives", "value": 452 },
+            { "name": "Nepal", "value": 29942 },
+            { "name": "Pakistan", "value": 204596 },
+            { "name": "Sri Lanka", "value": 3166 },
+            { "name": "Taiwan", "value": 21019 }
+          ]
+        },
+        {
+          "name": "Souteast Asia",
+          "children": [
+            { "name": "Brunei Darussalam", "value": 439 },
+            { "name": "Cambodia", "value": 16483 },
+            { "name": "Indonesia", "value": 269 },
+            { "name": "Lao PDR", "value": 7064 },
+            { "name": "Malasia", "value": 32454 },
+            { "name": "Myanmar", "value": 54336 },
+            { "name": "Philippines", "value": 108106 },
+            { "name": "Singapore", "value": 5868 },
+            { "name": "Thailand", "value": 66409 },
+            { "name": "Timor-Leste", "value": 1352 },
+            { "name": "Vietnam", "value": 97429 }
+          ]
         }
       ]
     },
     {
       "name": "Europe",
       "children": [
-        { "name": "DirtySprite", "value": 8833 },
-        { "name": "LineSprite", "value": 1732 },
-        { "name": "RectSprite", "value": 3623 },
-        { "name": "TextSprite", "value": 10066 }
+        {
+          "name": "Northern Europe",
+          "children": [
+            { "name": "Denmark", "value": 5813 },
+            { "name": "Estonia", "value": 1323 },
+            { "name": "Faroe Islands", "value": 49 },
+            { "name": "Finland", "value": 5551 },
+            { "name": "Greenland", "value": 56 },
+            { "name": "Iceland", "value": 341 },
+            { "name": "Ireland", "value": 4977 },
+            { "name": "Latvia", "value": 1886 },
+            { "name": "Lithuania", "value": 2722 },
+            { "name": "Northern Ireland", "value": 1885 },
+            { "name": "Norway", "value": 5421 },
+            { "name": "Scotland", "value": 5424 },
+            { "name": "Sweden", "value": 10160 },
+            { "name": "United Kingdom", "value": 68178 },
+            { "name": "Wales", "value": 3125 }
+          ]
+        },
+        {
+          "name": "Western Europe",
+          "children": [
+            { "name": "Austria", "value": 9018 },
+            { "name": "Belgium", "value": 11613 },
+            { "name": "France", "value": 65375 },
+            { "name": "Germany", "value": 83657 },
+            { "name": "Liechtenstein", "value": 38 },
+            { "name": "Luxembourg", "value": 633 },
+            { "name": "Netherlands", "value": 17157 },
+            { "name": "Switzerland", "value": 8704 }
+          ]
+        },
+        {
+          "name": "Eastern Europe",
+          "children": [
+            { "name": "Belarus", "value": 9431 },
+            { "name": "Bulgaria", "value": 6890 },
+            { "name": "Czechia", "value": 10713 },
+            { "name": "Hungary", "value": 9623 },
+            { "name": "Moldova", "value": 4030 },
+            { "name": "Poland", "value": 37758 },
+            { "name": "Romania", "value": 19125 },
+            { "name": "Russian Federation", "value": 145718 },
+            { "name": "Slovakia", "value": 5454 },
+            { "name": "Ukrane", "value": 43416 }
+          ]
+        },
+        {
+          "name": "Southern Europe",
+          "children": [
+            { "name": "Denmark", "value": 5813 },
+            { "name": "Estonia", "value": 1323 },
+            { "name": "Faroe Islands", "value": 49 },
+            { "name": "Finland", "value": 5551 },
+            { "name": "Greenland", "value": 56 },
+            { "name": "Iceland", "value": 341 },
+            { "name": "Ireland", "value": 4977 },
+            { "name": "Latvia", "value": 1886 },
+            { "name": "Lithuania", "value": 2722 },
+            { "name": "Northern Ireland", "value": 1885 },
+            { "name": "Norway", "value": 5421 },
+            { "name": "Scotland", "value": 5424 },
+            { "name": "Sweden", "value": 10160 },
+            { "name": "United Kingdom", "value": 68178 },
+            { "name": "Wales", "value": 3125 }
+          ]
+        }
       ]
     },
     {
