@@ -8,7 +8,7 @@ const VerticalWithAxisBarchart = () => {
 
   useEffect(() => {
     const data = [
-      { date: "2022-01-01", imports: 1200 },
+      { date: "2022-01-01", imports: 1200},
       { date: "2022-02-01", imports: 1400 },
       { date: "2022-03-01", imports: 1500 },
       { date: "2022-04-01", imports: 1600 },
@@ -30,23 +30,28 @@ const VerticalWithAxisBarchart = () => {
         .style("background", "pink");
       //.style("padding", spacing);
 
-      const startDate = d3.min(data, function (d) {
-        return new Date(d.date);
-      });
-      const endDate = d3.max(data, function (d) {
-        return new Date(d.date);
-      });
+      const
 
-      const timeScale = d3
-        .scaleTime()
-        .domain([startDate, endDate])
+      const timeScale = d3.scaleTime().domain([])
+      // Consider using a time scale
+      // Define the x and y scale
+      const xScale = d3
+        .scaleLinear()
+        .domain([
+          d3.min(data, function (d) {
+            return d.year;
+          }),
+          d3.max(data, function (d) {
+            return d.year;
+          }),
+        ])
         .range([0, width]);
 
       const yScale = d3
         .scaleLinear()
         .domain([
           d3.max(data, function (d) {
-            return d.imports;
+            return d.loss;
           }),
           0,
         ])
@@ -54,13 +59,10 @@ const VerticalWithAxisBarchart = () => {
 
       //Define x and y axis
       const xAxis = d3
-        .axisBottom(timeScale)
+        .axisBottom(xScale)
         .ticks(5)
         .tickFormat(function (d) {
-          console.log(
-            `${d.toString().split(" ")[1]} ${d.toString().split(" ")[3]}`
-          );
-          return `${d.toString().split(" ")[1]} ${d.toString().split(" ")[3]}`;
+          return d;
         });
       const yAxis = d3.axisLeft(yScale);
 
@@ -87,10 +89,10 @@ const VerticalWithAxisBarchart = () => {
           return height - yScale(d.loss);
         })
         .attr("x", function (d) {
-          return width / 10 + timeScale(d.date) + 15;
+          return width / 10 + xScale(d.year) + 15;
         })
         .attr("y", function (d) {
-          return height / 10 + yScale(d.imports);
+          return height / 10 + yScale(d.loss);
         })
         .style("fill", "indigo");
     };
