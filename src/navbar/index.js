@@ -19,7 +19,12 @@ const Navbar = () => {
           <Link to="/horizontal-barchart">Horizontal Barchart</Link>
         </li>
         <li>
-          <Link to="/vertical-barchart">Vertical Barchart</Link>
+          <Link to="/vertical-barchart">Starter Vertical Barcharts</Link>
+        </li>
+        <li>
+          <Link to="/vertical-barchart-with-axis">
+            Vertical Barchart with Axis
+          </Link>
         </li>
         <li>
           <Link to="/treemap">Treemap</Link>

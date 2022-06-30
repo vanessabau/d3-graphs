@@ -1,10 +1,10 @@
 import React from "react";
-import VerticalBarchart from "../components/vertical-barchart";
+import VerticalWithAxisBarchart from "../components/vertical-with-axis-barchart/index";
 
-const VerticalBarchartPage = () => {
+const VerticalWithAxisBarchartPage = () => {
   return (
     <div>
-      <h1>React-D3 Basic Vertical Barcharts</h1>
+      <h1>React-D3 Vertical Barchart with Axis</h1>
       <h4>
         Developed from the D3-HTML/JavaScript horizontal barchart in the{" "}
         <a href="https://www.udemy.com/course/d3js-data-visualization-projects//">
@@ -13,8 +13,8 @@ const VerticalBarchartPage = () => {
         {"  "}
         by Crypters Infotech
       </h4>
-      <VerticalBarchart />
+      <VerticalWithAxisBarchart />
     </div>
   );
 };
-export default VerticalBarchartPage;
+export default VerticalWithAxisBarchartPage;

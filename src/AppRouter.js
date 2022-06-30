@@ -7,6 +7,7 @@ import TreemapPage from "./pages/TreemapPage";
 import BarchartPage from "./pages/BarchartPage";
 import HorizontalBarchartPage from "./pages/HorizontalBarchartPage";
 import VerticalBarchartPage from "./pages/VerticalBarchartPage";
+import VerticalWithAxisBarchartPage from "./pages/VerticalWithAxisBarchart";
 
 function AppRouter() {
   return (
@@ -20,6 +21,10 @@ function AppRouter() {
           element={<HorizontalBarchartPage />}
         />
         <Route path="/vertical-barchart" element={<VerticalBarchartPage />} />
+        <Route
+          path="/vertical-barchart-with-axis"
+          element={<VerticalWithAxisBarchartPage />}
+        />
         <Route path="/treemap" element={<TreemapPage />} />
       </Routes>
     </BrowserRouter>
