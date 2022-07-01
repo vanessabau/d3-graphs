@@ -2,11 +2,11 @@
   margin-bottom: 2rem;
 }
 
-#second-barchart g path,
+/* #second-barchart g path,
 g line {
-  stroke: deeppink;
+  stroke: black;
   stroke-width: 0.25rem;
-}
+} */
 
 #second-barchart g text {
   stroke: indigo;

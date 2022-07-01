@@ -4,7 +4,6 @@ import luluData from "./data.json";
 
 const VerticalWithAxisBarchart = () => {
   const barchartCanvasRef = useRef();
-  console.log(luluData);
 
   useEffect(() => {
     const data = [
@@ -13,7 +12,7 @@ const VerticalWithAxisBarchart = () => {
       { date: "2022-03-01", imports: 1500 },
       { date: "2022-04-01", imports: 1600 },
       { date: "2022-05-01", imports: 1600 },
-      { date: "2022-06-01", imports: 1750 },
+      { date: "2022-06-02", imports: 1750 },
     ];
 
     //const spacing = 50;
@@ -27,7 +26,7 @@ const VerticalWithAxisBarchart = () => {
         .attr("id", "vertical-barchart-svg")
         .attr("width", width + width / 4)
         .attr("height", height + height / 4)
-        .style("background", "pink");
+        .style("background", "#fafafa");
       //.style("padding", spacing);
 
       const startDate = d3.min(data, function (d) {
@@ -36,6 +35,18 @@ const VerticalWithAxisBarchart = () => {
       const endDate = d3.max(data, function (d) {
         return new Date(d.date);
       });
+
+      const colorScale = d3
+        .scaleLinear()
+        .domain([
+          d3.min(data, function (d) {
+            return d.imports;
+          }),
+          d3.max(data, function (d) {
+            return d.imports;
+          }),
+        ])
+        .range(["#4a90e2", "#d31334"]);
 
       const timeScale = d3
         .scaleTime()
@@ -55,26 +66,30 @@ const VerticalWithAxisBarchart = () => {
       //Define x and y axis
       const xAxis = d3
         .axisBottom(timeScale)
-        .ticks(5)
+        //
         .tickFormat(function (d) {
           console.log(
             `${d.toString().split(" ")[1]} ${d.toString().split(" ")[3]}`
           );
           return `${d.toString().split(" ")[1]} ${d.toString().split(" ")[3]}`;
-        });
-      const yAxis = d3.axisLeft(yScale);
+        })
+        .tickSizeOuter(0);
+      const yAxis = d3.axisLeft(yScale).tickSizeOuter(0);
 
       // Append 'g' element and transform/translate
       svg
         .append("g")
+        .attr("class", "x axis")
         .attr(
           "transform",
           `translate(${width / 10 + 30}, ${height + height / 10})`
         )
-        .call(xAxis);
+        .call(xAxis)
+        .style("text-anchor", "start");
       svg
         .append("g")
-        .attr("transform", `translate(${width / 10}, ${height / 10})`)
+        .attr("class", "y axis")
+        .attr("transform", `translate(${width / 10 + 29}, ${height / 10})`)
         .call(yAxis);
 
       const rect = svg.selectAll("rect").data(data);
@@ -82,17 +97,21 @@ const VerticalWithAxisBarchart = () => {
       rect
         .enter()
         .append("rect")
-        .attr("width", 30)
-        .attr("height", function (d) {
-          return height - yScale(d.loss);
-        })
         .attr("x", function (d) {
-          return width / 10 + timeScale(d.date) + 15;
+          return timeScale(new Date(d.date));
         })
         .attr("y", function (d) {
-          return height / 10 + yScale(d.imports);
+          console.log(d.imports);
+          return yScale(d.imports);
         })
-        .style("fill", "indigo");
+        .attr("width", 25)
+        .attr("height", function (d) {
+          return height - yScale(d.imports);
+        })
+        .attr("transform", `translate(${width / 10 + 30}, ${height / 10})`)
+        .style("fill", function (d) {
+          return colorScale(d.imports);
+        });
     };
 
     // Target barchart so it only renders once
