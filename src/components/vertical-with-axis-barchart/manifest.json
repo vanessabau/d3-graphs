@@ -1,0 +1,15 @@
+{
+  "2022": {
+    "5": [
+      "dependency-report-2022-5-3.json",
+      "dependency-report-2022-5-4.json",
+      "dependency-report-2022-5-8.json",
+      "dependency-report-2022-5-9.json",
+      "dependency-report-2022-5-10.json",
+      "dependency-report-2022-5-17.json",
+      "dependency-report-2022-5-24.json",
+      "dependency-report-2022-6-30.json"
+    ],
+    "6": ["dependency-report-2022-7-1.json"]
+  }
+}

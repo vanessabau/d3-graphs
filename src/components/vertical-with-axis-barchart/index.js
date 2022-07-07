@@ -4,7 +4,7 @@ import luluData from "./data.json";
 
 const VerticalWithAxisBarchart = () => {
   const barchartCanvasRef = useRef();
-
+  console.log(luluData);
   useEffect(() => {
     const data = [
       { date: "2022-01-01", imports: 1200 },
@@ -36,18 +36,6 @@ const VerticalWithAxisBarchart = () => {
         return new Date(d.date);
       });
 
-      const colorScale = d3
-        .scaleLinear()
-        .domain([
-          d3.min(data, function (d) {
-            return d.imports;
-          }),
-          d3.max(data, function (d) {
-            return d.imports;
-          }),
-        ])
-        .range(["#4a90e2", "#d31334"]);
-
       const timeScale = d3
         .scaleTime()
         .domain([startDate, endDate])
@@ -75,6 +63,18 @@ const VerticalWithAxisBarchart = () => {
         })
         .tickSizeOuter(0);
       const yAxis = d3.axisLeft(yScale).tickSizeOuter(0);
+
+      const colorScale = d3
+        .scaleLinear()
+        .domain([
+          d3.min(data, function (d) {
+            return d.imports;
+          }),
+          d3.max(data, function (d) {
+            return d.imports;
+          }),
+        ])
+        .range(["#4a90e2", "#d31334"]);
 
       // Append 'g' element and transform/translate
       svg
