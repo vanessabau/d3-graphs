@@ -1,19 +1,40 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import { formatText, selectColor } from "./util.js";
-//import { treemapDataConfig } from './treemap-data-config';
-import "./treemap-styles.css";
+
+function debounce(fn, ms) {
+  let timer;
+  return (_) => {
+    clearTimeout(timer);
+    timer = setTimeout((_) => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
 
 const ZoomTreemap = ({ dataJSON }) => {
+  const [dimensions, setDimensions] = useState({
+    setHeight: window.innerHeight,
+    setWidth: window.innerWidth
+  });
+
   const svgRef = useRef();
 
   useEffect(() => {
-    //const data = treemapDataConfig(dataJSON);
     const data = dataJSON;
     const svgCanvas = d3.select(svgRef.current);
 
-    const width = 954;
-    const height = 954;
+    const debouncedHandleResize = debounce(function handleResize() {
+      setDimensions({
+        setHeight: window.innerHeight,
+        setWidth: window.innerWidth
+      });
+    }, 50);
+
+    window.addEventListener("resize", debouncedHandleResize);
+    const width = dimensions.setWidth;
+    const height = dimensions.setHeight;
 
     const x = d3.scaleLinear().rangeRound([0, width]);
     const y = d3.scaleLinear().rangeRound([0, height]);
@@ -66,7 +87,7 @@ const ZoomTreemap = ({ dataJSON }) => {
           .data((d) =>
             formatText(d)
               .split(/(?=[A-Z][^A-Z])/g)
-              .concat(`Pop. (1000): ${d.value}`)
+              .concat(`Instances: ${d.value}`)
           )
           .join("tspan")
           .attr("x", 3)
@@ -155,8 +176,10 @@ const ZoomTreemap = ({ dataJSON }) => {
     };
 
     drawTreemap();
-  }, [dataJSON]);
-
+    return (_) => {
+      window.removeEventListener("resize", debouncedHandleResize);
+    };
+  }, [dataJSON, dimensions]);
   return (
     <div className="zoom-treemap-container">
       <svg ref={svgRef} width="78%" height="78%"></svg>

@@ -12,7 +12,7 @@ const VerticalWithAxisBarchart = () => {
       { date: "2022-03-01", imports: 1500 },
       { date: "2022-04-01", imports: 1600 },
       { date: "2022-05-01", imports: 1600 },
-      { date: "2022-06-02", imports: 1750 },
+      { date: "2022-06-02", imports: 1750 }
     ];
 
     //const spacing = 50;
@@ -47,7 +47,7 @@ const VerticalWithAxisBarchart = () => {
           d3.max(data, function (d) {
             return d.imports;
           }),
-          0,
+          0
         ])
         .range([0, height]);
 
@@ -72,7 +72,7 @@ const VerticalWithAxisBarchart = () => {
           }),
           d3.max(data, function (d) {
             return d.imports;
-          }),
+          })
         ])
         .range(["#4a90e2", "#d31334"]);
 
